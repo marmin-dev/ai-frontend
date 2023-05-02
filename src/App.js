@@ -3,7 +3,7 @@ import AnnePage from './page/AnnePage';
 import MaryPage from './page/MaryPage';
 import SuheePage from './page/SuheePage';
 import YejiPage from './page/YejiPage';
-import SelectPage from './page/SelectPage';
+import SelectPage from './page/SelectPage.js';
 
 const App = () => {
   return (
