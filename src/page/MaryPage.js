@@ -2,9 +2,9 @@ import { useState } from 'react';
 import createQ from '../apiHandler/AiApiHandler';
 import ChatPage from '../components/PageComponent';
 import styled from 'styled-components';
-import backgroundImage1 from '../public/char1/char1_1.png';
-import backgroundImage2 from '../public/char1/char1-4.png';
-import backgroundImage3 from '../public/char1/char1_3.png';
+import backgroundImage1 from '../public/char2/char1.png';
+import backgroundImage2 from '../public/char2/char2.png';
+import backgroundImage3 from '../public/char2/char3.png';
 import { Link } from 'react-router-dom';
 
 const CharacterBox = styled.div`
@@ -48,12 +48,10 @@ const UiWindow = styled.div`
   @media (min-width: 768px) {
     justify-content: space-between;
     width: 550px;
-    height: 200px;
   }
   @media (max-width: 768px) {
     justify-content: end;
     width: 380px;
-    height: 200px;
   }
 `;
 const CharInput = styled.input`
