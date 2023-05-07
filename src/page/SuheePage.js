@@ -72,7 +72,7 @@ const InputButton = styled.input`
   font-size: 15px;
   color: white;
   :hover {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.8);
   }
 `;
 const SuheePage = () => {
@@ -81,7 +81,7 @@ const SuheePage = () => {
   const [question, setQuestion] = useState('');
   // test data
   const data = { author: 'author1', question: question };
-  const num = 2;
+  const num = 3;
   // api handler => callback function <POST>
   const apiHandle = async () => {
     setBackgroundImage(backgroundImage3);

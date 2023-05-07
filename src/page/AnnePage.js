@@ -36,7 +36,7 @@ const CharacterBox = styled.div`
   }
 `;
 const UiWindow = styled.div`
-  background-color: rgba(230, 207, 178, 0.7);
+  background-color: rgba(230, 207, 178, 0.8);
   margin-top: auto;
   .char-name {
     color: white;
