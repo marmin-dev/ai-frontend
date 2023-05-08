@@ -19,11 +19,12 @@ const CharacterBox = styled.div`
   .logo_area {
     text-decoration: none;
     color: white;
+    margin-top: 0px;
     @media (min-width: 768px) {
-      font-size: 25px;
+      font-size: 20px;
     }
     @media (max-width: 768px) {
-      font-size: 20px;
+      font-size: 15px;
     }
   }
   @media (min-width: 768px) {
@@ -36,7 +37,7 @@ const CharacterBox = styled.div`
   }
 `;
 const UiWindow = styled.div`
-  background-color: rgba(230, 207, 178, 0.8);
+  background-color: rgba(0, 0, 0, 0.7);
   margin-top: auto;
   .char-name {
     color: white;
@@ -78,7 +79,7 @@ const InputButton = styled.input`
   }
 `;
 const AnnePage = () => {
-  const [content, setContent] = useState('안녕!');
+  const [content, setContent] = useState('Hi!');
   const [backgroundImage, setBackgroundImage] = useState(backgroundImage1); // todo: import background image
   const [question, setQuestion] = useState('');
   // test data
@@ -88,6 +89,8 @@ const AnnePage = () => {
   const apiHandle = async () => {
     setBackgroundImage(backgroundImage3);
     const response = await createQ(num, data);
+    const inputCha = document.getElementById('hello');
+    inputCha.value = '';
     setContent(response.answer);
     setBackgroundImage(backgroundImage1);
   };
@@ -106,17 +109,29 @@ const AnnePage = () => {
     <ChatPage>
       <div>
         <CharacterBox backgroundImage={backgroundImage}>
-          <Link to="/" className="logo_area">
-            ☖Home
-          </Link>
+          <p className="logo_area">
+            <Link to="/" className="logo_area">
+              ☖Home
+            </Link>
+            /
+            <Link to="/logs" className="logo_area">
+              Logs
+            </Link>
+          </p>
           <UiWindow>
             <h3 className="char-name">Anne</h3>
             <p className="char-name">{content}</p>
             <CharInput
+              id="hello"
               onClick={change12}
               className="text"
-              placeholder="뭐라고할까?"
+              placeholder="What you gonna say?"
               onChange={handleInputChange}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  apiHandle();
+                }
+              }}
             ></CharInput>
             <div className="input-button">
               <InputButton

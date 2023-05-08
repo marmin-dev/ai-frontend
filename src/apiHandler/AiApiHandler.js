@@ -11,4 +11,5 @@ const createQ = async (num, data) => {
     console.log(e);
   }
 };
+
 export default createQ;

@@ -4,6 +4,7 @@ import MaryPage from './page/MaryPage';
 import SuheePage from './page/SuheePage';
 import YejiPage from './page/YejiPage';
 import SelectPage from './page/SelectPage.js';
+import LogPage from './page/LogPage';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Route path="/mary" element={<MaryPage />} />
       <Route path="/suhee" element={<SuheePage />} />
       <Route path="/yeji" element={<YejiPage />} />
+      <Route path="/logs" element={<LogPage />} />
     </Routes>
   );
 };

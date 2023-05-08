@@ -19,11 +19,12 @@ const CharacterBox = styled.div`
   .logo_area {
     text-decoration: none;
     color: black;
+    margin-top: 0px;
     @media (min-width: 768px) {
-      font-size: 25px;
+      font-size: 20px;
     }
     @media (max-width: 768px) {
-      font-size: 20px;
+      font-size: 15px;
     }
   }
   @media (min-width: 768px) {
@@ -36,7 +37,7 @@ const CharacterBox = styled.div`
   }
 `;
 const UiWindow = styled.div`
-  background-color: rgba(230, 207, 178, 0.7);
+  background-color: rgba(0, 0, 0, 0.6);
   margin-top: auto;
   .char-name {
     color: white;
@@ -86,6 +87,8 @@ const SuheePage = () => {
   const apiHandle = async () => {
     setBackgroundImage(backgroundImage3);
     const response = await createQ(num, data);
+    const inputCha = document.getElementById('hello');
+    inputCha.value = '';
     setContent(response.answer);
     setBackgroundImage(backgroundImage1);
   };
@@ -104,9 +107,15 @@ const SuheePage = () => {
     <ChatPage>
       <div>
         <CharacterBox backgroundImage={backgroundImage}>
-          <Link to="/" className="logo_area">
-            ☖Home
-          </Link>
+          <p className="logo_area">
+            <Link to="/" className="logo_area">
+              ☖Home
+            </Link>
+            /
+            <Link to="/logs" className="logo_area">
+              Logs
+            </Link>
+          </p>
           <UiWindow>
             <h3 className="char-name">수희</h3>
             <p className="char-name">{content}</p>
@@ -115,6 +124,11 @@ const SuheePage = () => {
               className="text"
               placeholder="뭐라고할까?"
               onChange={handleInputChange}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  apiHandle();
+                }
+              }}
             ></CharInput>
             <div className="input-button">
               <InputButton
