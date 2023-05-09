@@ -76,12 +76,16 @@ const CharInfo = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 10px;
+  justify-content: flex-start;
 `;
 
 const CharTitle = styled.h3`
+  margin-left: 0px;
+  padding: 0px;
   color: black;
   text-align: center;
   margin-top: 5px;
+  width: fit-content;
 `;
 
 const CharDescription = styled.p`
@@ -102,6 +106,9 @@ const LoginBtn = styled.button`
 `;
 const CharLink = styled(Link)`
   text-decoration: none;
+  direction: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const ImageArea = styled.div`
@@ -129,7 +136,7 @@ const SelectPage = () => {
             <CharInfo>
               <CharLink to={'/anne'}>
                 <CharTitle>Anne</CharTitle>
-                <CharDescription>Description of Anne</CharDescription>
+                <CharDescription>Hello It's Annnnnnne!</CharDescription>
               </CharLink>
             </CharInfo>
           </SelectChar>
@@ -141,7 +148,7 @@ const SelectPage = () => {
             <CharInfo>
               <CharLink to={'/mary'}>
                 <CharTitle>Mary</CharTitle>
-                <CharDescription>Description of Mary</CharDescription>
+                <CharDescription>Hi I'm Mary</CharDescription>
               </CharLink>
             </CharInfo>
           </SelectChar>
@@ -153,7 +160,9 @@ const SelectPage = () => {
             <CharInfo>
               <CharLink to={'/suhee'}>
                 <CharTitle>수희</CharTitle>
-                <CharDescription>수희 설명</CharDescription>
+                <CharDescription>
+                  안녕하세요! 저는 수희라고 해요
+                </CharDescription>
               </CharLink>
             </CharInfo>
           </SelectChar>
@@ -165,7 +174,7 @@ const SelectPage = () => {
             <CharInfo>
               <CharLink to={'/yeji'}>
                 <CharTitle>예지</CharTitle>
-                <CharDescription>예지 설명</CharDescription>
+                <CharDescription>안녕! 나는 예지야!</CharDescription>
               </CharLink>
             </CharInfo>
           </SelectChar>

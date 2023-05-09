@@ -120,6 +120,7 @@ const YejiPage = () => {
             <h3 className="char-name">예지</h3>
             <p className="char-name">{content}</p>
             <CharInput
+              id="hello"
               onClick={change12}
               className="text"
               placeholder="뭐라고할까?"

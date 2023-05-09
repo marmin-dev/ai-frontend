@@ -120,6 +120,7 @@ const MaryPage = () => {
             <h3 className="char-name">Mary</h3>
             <p className="char-name">{content}</p>
             <CharInput
+              id="hello"
               onClick={change12}
               className="text"
               placeholder="What you gonna say?"
