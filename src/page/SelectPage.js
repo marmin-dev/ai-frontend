@@ -124,12 +124,25 @@ const ImageArea = styled.div`
   }
 `;
 
-const LoginArea = styled.input`
-  display: none;
+const CharInput = styled.input`
+  border: none;
+  border-bottom: 2px solid black;
+  color: black;
+  background: none;
+  width: 100%;
+  font-size: 15px;
+  margin-bottom: 3px;
 `;
 
 const SelectPage = () => {
-  const [login, setLogin] = useState('');
+  const [username, setUsername] = useState('default');
+
+  const onInputChange = (event) => {
+    setUsername(event.target.value);
+  };
+  const localUsernameSet = () => {
+    localStorage.setItem('username', username);
+  };
 
   return (
     <ChatPage>
@@ -188,9 +201,16 @@ const SelectPage = () => {
           </SelectChar>
           {/* Login Area */}
           <div className="login_area">
-            <Link to={'http://localhost:3000/login/oauth2/code/google'}>
-              <LoginBtn>Login With Google</LoginBtn>
-            </Link>
+            <CharInput
+              placeholder="Username 입력해주세요"
+              onChange={onInputChange}
+              onKeyUp={(e) => {
+                if (e.key === 'Enter') {
+                  localUsernameSet();
+                }
+              }}
+            ></CharInput>
+            <LoginBtn onClick={localUsernameSet}>SetUsername!</LoginBtn>
           </div>
         </div>
       </SelectBox>

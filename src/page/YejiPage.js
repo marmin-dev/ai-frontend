@@ -6,6 +6,7 @@ import backgroundImage1 from '../public/char4/char1.png';
 import backgroundImage2 from '../public/char4/char2.png';
 import backgroundImage3 from '../public/char4/char3.png';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const CharacterBox = styled.div`
   background-image: url(${(props) => props.backgroundImage});
@@ -81,7 +82,7 @@ const YejiPage = () => {
   const [backgroundImage, setBackgroundImage] = useState(backgroundImage1); // todo: import background image
   const [question, setQuestion] = useState('');
   // test data
-  const data = { author: 'author1', question: question };
+  const data = { author: `${localStorage.username}`, question: question };
   const num = 4;
   // api handler => callback function <POST>
   const apiHandle = async () => {
@@ -102,6 +103,13 @@ const YejiPage = () => {
     setQuestion(event.target.value);
   };
 
+  useEffect(() => {
+    const username = localStorage.getItem('username');
+    if (!username) {
+      alert('유저 이름을 입력해주세요 \nplease set username');
+      window.location.href = '/';
+    }
+  }, []);
   // Rendering
   return (
     <ChatPage>

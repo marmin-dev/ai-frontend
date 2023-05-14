@@ -67,7 +67,7 @@ const ListBox = styled.div`
 // component
 const LogPage = () => {
   const [charMo, setCharMo] = useState('anne');
-  const [user, setuser] = useState('author1');
+  const [user, setuser] = useState(`${localStorage.username}`);
   const [contents, setContents] = useState([]);
   const navigate = useNavigate();
 
