@@ -3,6 +3,7 @@ import ChatPage from '../components/PageComponent';
 import { useState } from 'react';
 import CreateLog from '../apiHandler/CreateLog';
 import { Link, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const CharacterBox = styled.div`
   background-color: rgba(255, 255, 255, 0.5);
@@ -13,6 +14,9 @@ const CharacterBox = styled.div`
   flex-direction: column;
   height: 100%;
   overflow: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
   /* desktop environment */
   .logo_area {
     text-decoration: none;
@@ -31,7 +35,7 @@ const CharacterBox = styled.div`
   }
   @media (max-width: 768px) {
     height: 700px;
-    width: 380px;
+    width: 370px;
   }
 `;
 const NavDiv = styled.div`
@@ -52,11 +56,11 @@ const ListBox = styled.div`
   background-color: none;
   border: 1px solid black;
   @media (min-width: 768px) {
-    width: 550px;
+    width: 545px;
     font-size: 12px;
   }
   @media (max-width: 768px) {
-    width: 380px;
+    width: 366px;
     font-size: 10px;
   }
   .author {
@@ -77,14 +81,17 @@ const LogPage = () => {
 
   const apiHandle = async () => {
     const response = await CreateLog(user, charMo);
-    // const objectList = JSON.parse(response);
     setContents(response);
   };
+
   const handleCharChange = (event) => {
     setCharMo(event.target.value);
-    apiHandle();
   };
-  apiHandle('anne');
+
+  useEffect(() => {
+    apiHandle();
+  }, [charMo]);
+
   return (
     <ChatPage>
       <CharacterBox>
