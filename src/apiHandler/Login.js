@@ -13,7 +13,7 @@ const Login = () => {
 
   return (
     <GoogleLogin
-      clientId="GOOGLE_CLIENT_ID"
+      clientId=""
       buttonText="Google 로그인"
       onSuccess={onSuccess}
       onFailure={onFailure}
