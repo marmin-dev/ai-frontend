@@ -6,7 +6,6 @@ import image2 from '../public/char2/char1.png';
 import image3 from '../public/char3/char1.png';
 import image4 from '../public/char4/char1.png';
 import { useState } from 'react';
-import loginApi from '../apiHandler/LoginApi';
 
 const SelectBox = styled.div`
   background-color: rgba(255, 255, 255, 0.5);
