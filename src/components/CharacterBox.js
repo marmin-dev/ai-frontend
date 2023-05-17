@@ -9,6 +9,7 @@ const CharacterBox = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
+  border: black 1px solid;
   /* desktop environment */
   .logo_area {
     text-decoration: none;

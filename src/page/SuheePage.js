@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import createQ from '../apiHandler/AiApiHandler';
 import ChatPage from '../components/PageComponent';
-import styled from 'styled-components';
 import backgroundImage1 from '../public/char3/char1.png';
 import backgroundImage2 from '../public/char3/char2.png';
 import backgroundImage3 from '../public/char3/char3.png';
+import bg3 from '../public/backgrounds/bg3.png';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import CharacterBox from '../components/CharacterBox';
@@ -50,7 +50,7 @@ const SuheePage = () => {
 
   // Rendering
   return (
-    <ChatPage>
+    <ChatPage backgroundImage={bg3}>
       <div>
         <CharacterBox backgroundImage={backgroundImage}>
           <p className="logo_area">

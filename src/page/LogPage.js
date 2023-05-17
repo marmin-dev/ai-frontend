@@ -4,9 +4,10 @@ import { useState } from 'react';
 import CreateLog from '../apiHandler/CreateLog';
 import { Link, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import bg5 from '../public/backgrounds/bg5.png';
 
 const CharacterBox = styled.div`
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -19,8 +20,9 @@ const CharacterBox = styled.div`
   }
   /* desktop environment */
   .logo_area {
+    background: rgba(0, 0, 0, 0.5);
     text-decoration: none;
-    color: black;
+    color: white;
     margin-top: 0px;
     @media (min-width: 768px) {
       font-size: 25px;
@@ -55,6 +57,7 @@ const CharSelector = styled.select`
 const ListBox = styled.div`
   background-color: none;
   border: 1px solid black;
+  color: white;
   @media (min-width: 768px) {
     width: 545px;
     font-size: 12px;
@@ -93,7 +96,7 @@ const LogPage = () => {
   }, [charMo]);
 
   return (
-    <ChatPage>
+    <ChatPage backgroundImage={bg5}>
       <CharacterBox>
         <NavDiv>
           <Link onClick={handleGoBack} className="logo_area">

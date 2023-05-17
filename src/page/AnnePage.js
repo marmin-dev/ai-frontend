@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import createQ from '../apiHandler/AiApiHandler';
 import ChatPage from '../components/PageComponent';
-import styled from 'styled-components';
 import backgroundImage1 from '../public/char1/char1_1.png';
 import backgroundImage2 from '../public/char1/char1-4.png';
 import backgroundImage3 from '../public/char1/char1_3.png';
@@ -11,6 +10,7 @@ import CharacterBox from '../components/CharacterBox';
 import UiWindow from '../components/UiWindow';
 import CharInput from '../components/CharInput';
 import InputButton from '../components/Inputbutton';
+import bg1 from '../public/backgrounds/bg1.png';
 
 const AnnePage = () => {
   const [content, setContent] = useState('Hi!');
@@ -50,7 +50,7 @@ const AnnePage = () => {
 
   // Rendering
   return (
-    <ChatPage>
+    <ChatPage backgroundImage={bg1}>
       <div>
         <CharacterBox backgroundImage={backgroundImage}>
           <p className="logo_area">

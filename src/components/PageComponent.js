@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-const PageTemplateBlock = styled.div`
+const ChatPage = styled.div`
   position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
   right: 0;
-  background: #faefbb;
+  background-image: url(${(props) => props.backgroundImage});
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,7 +15,4 @@ const PageTemplateBlock = styled.div`
   height: 100%;
 `;
 
-const ChatPage = ({ children }) => {
-  return <PageTemplateBlock>{children}</PageTemplateBlock>;
-};
 export default ChatPage;

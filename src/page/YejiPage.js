@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import createQ from '../apiHandler/AiApiHandler';
 import ChatPage from '../components/PageComponent';
-import styled from 'styled-components';
 import backgroundImage1 from '../public/char4/char1.png';
 import backgroundImage2 from '../public/char4/char2.png';
 import backgroundImage3 from '../public/char4/char3.png';
+import bg4 from '../public/backgrounds/bg4.png';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import CharacterBox from '../components/CharacterBox';
@@ -50,7 +50,7 @@ const YejiPage = () => {
   }, []);
   // Rendering
   return (
-    <ChatPage>
+    <ChatPage backgroundImage={bg4}>
       <div>
         <CharacterBox backgroundImage={backgroundImage}>
           <p className="logo_area">

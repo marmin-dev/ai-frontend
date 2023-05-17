@@ -6,9 +6,10 @@ import image2 from '../public/char2/char1.png';
 import image3 from '../public/char3/char1.png';
 import image4 from '../public/char4/char1.png';
 import { useState } from 'react';
+import bg5 from '../public/backgrounds/bg5.png';
 
 const SelectBox = styled.div`
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -57,18 +58,19 @@ const SelectBox = styled.div`
 `;
 
 const HeaderSelect = styled.h1`
-  color: black;
+  color: white;
 `;
 
 const SelectChar = styled.div`
   display: flex;
   border: solid 1px black;
+  color: white;
   @media (min-width: 768px) {
-    width: 550px;
+    width: 545px;
     height: 130px;
   }
   @media (max-width: 768px) {
-    width: 380px;
+    width: 375px;
     height: 120px;
   }
 `;
@@ -78,6 +80,7 @@ const CharInfo = styled.div`
   flex-direction: column;
   margin-left: 10px;
   justify-content: flex-start;
+  color: white;
 `;
 
 const CharTitle = styled.h3`
@@ -87,11 +90,13 @@ const CharTitle = styled.h3`
   text-align: center;
   margin-top: 5px;
   width: fit-content;
+  color: white;
 `;
 
 const CharDescription = styled.p`
   color: black;
   text-align: center;
+  color: white;
 `;
 
 const LoginBtn = styled.button`
@@ -100,9 +105,10 @@ const LoginBtn = styled.button`
   width: 300px;
   background: none;
   margin: auto;
-
+  color: white;
+  border: white 2px solid;
   &:hover {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.4);
   }
 `;
 const CharLink = styled(Link)`
@@ -125,8 +131,8 @@ const ImageArea = styled.div`
 
 const CharInput = styled.input`
   border: none;
-  border-bottom: 2px solid black;
-  color: black;
+  border-bottom: 2px solid white;
+  color: white;
   background: none;
   width: 100%;
   font-size: 15px;
@@ -144,7 +150,7 @@ const SelectPage = () => {
   };
 
   return (
-    <ChatPage>
+    <ChatPage backgroundImage={bg5}>
       <SelectBox>
         <HeaderSelect>Select Character</HeaderSelect>
         <div className="box_area">
