@@ -7,78 +7,11 @@ import backgroundImage2 from '../public/char1/char1-4.png';
 import backgroundImage3 from '../public/char1/char1_3.png';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
+import CharacterBox from '../components/CharacterBox';
+import UiWindow from '../components/UiWindow';
+import CharInput from '../components/CharInput';
+import InputButton from '../components/Inputbutton';
 
-const CharacterBox = styled.div`
-  background-image: url(${(props) => props.backgroundImage});
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  /* desktop environment */
-  .logo_area {
-    text-decoration: none;
-    color: white;
-    margin-top: 0px;
-    @media (min-width: 768px) {
-      font-size: 20px;
-    }
-    @media (max-width: 768px) {
-      font-size: 15px;
-    }
-  }
-  @media (min-width: 768px) {
-    width: 550px;
-    height: 760px;
-  }
-  @media (max-width: 768px) {
-    height: 700px;
-    width: 380px;
-  }
-`;
-const UiWindow = styled.div`
-  background-color: rgba(0, 0, 0, 0.7);
-  margin-top: auto;
-  .char-name {
-    color: white;
-  }
-  .input-button {
-    display: flex;
-    justify-content: center;
-  }
-  @media (min-width: 768px) {
-    justify-content: space-between;
-    width: 550px;
-    /* height: 200px; */
-  }
-  @media (max-width: 768px) {
-    justify-content: end;
-    width: 380px;
-    /* height: 200px; */
-  }
-`;
-const CharInput = styled.input`
-  border: none;
-  border-bottom: 2px solid white;
-  color: white;
-  background: none;
-  width: 100%;
-  font-size: 15px;
-`;
-const InputButton = styled.input`
-  border: white 2px solid;
-  width: 150px;
-  height: 30px;
-  align-self: center;
-  background: none;
-  margin-top: 10px;
-  font-size: 15px;
-  color: white;
-  :hover {
-    background-color: rgba(255, 255, 255, 0.7);
-  }
-`;
 const AnnePage = () => {
   const [content, setContent] = useState('Hi!');
   const [backgroundImage, setBackgroundImage] = useState(backgroundImage1); // todo: import background image
