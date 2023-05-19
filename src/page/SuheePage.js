@@ -24,6 +24,7 @@ const SuheePage = () => {
     const inputElement = document.getElementById('hello');
     inputElement.readOnly = true;
     setBackgroundImage(backgroundImage3);
+    setContent('수희는 생각중이다...');
     try {
       const response = await createQ(num, data);
       const inputCha = document.getElementById('hello');

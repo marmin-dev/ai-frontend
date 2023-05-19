@@ -23,6 +23,7 @@ const MaryPage = () => {
   const apiHandle = async () => {
     const inputElement = document.getElementById('hello');
     inputElement.readOnly = true;
+    setContent('Mary is thinking.....');
     setBackgroundImage(backgroundImage3);
     try {
       const response = await createQ(num, data);

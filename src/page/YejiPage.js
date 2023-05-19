@@ -24,6 +24,7 @@ const YejiPage = () => {
     const inputElement = document.getElementById('hello');
     inputElement.readOnly = true;
     setBackgroundImage(backgroundImage3);
+    setContent('예지는 생각에 잠긴 것 같다');
     try {
       const response = await createQ(num, data);
       const inputCha = document.getElementById('hello');
