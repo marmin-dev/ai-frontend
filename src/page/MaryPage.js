@@ -24,12 +24,17 @@ const MaryPage = () => {
     const inputElement = document.getElementById('hello');
     inputElement.readOnly = true;
     setBackgroundImage(backgroundImage3);
-    const response = await createQ(num, data);
-    const inputCha = document.getElementById('hello');
-    inputCha.value = '';
-    setContent(response.answer);
-    setBackgroundImage(backgroundImage1);
-    inputElement.readOnly = false;
+    try {
+      const response = await createQ(num, data);
+      const inputCha = document.getElementById('hello');
+      inputCha.value = '';
+      setContent(response.answer);
+      setBackgroundImage(backgroundImage1);
+      inputElement.readOnly = false;
+    } catch (e) {
+      setContent('Mary is gone. Please reload to bring back Mary');
+      setBackgroundImage(backgroundImage3);
+    }
   };
   console.log(backgroundImage);
   // Image change function
@@ -74,6 +79,7 @@ const MaryPage = () => {
               onChange={handleInputChange}
               onKeyDown={(e) => {
                 if (e.key === 'Enter') {
+                  e.preventDefault();
                   apiHandle();
                 }
               }}

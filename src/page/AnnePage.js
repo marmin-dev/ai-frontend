@@ -23,15 +23,20 @@ const AnnePage = () => {
   const apiHandle = async () => {
     const inputElement = document.getElementById('hello');
     inputElement.readOnly = true;
+    setContent('Anne is thinking.....');
     setBackgroundImage(backgroundImage3);
-    const response = await createQ(num, data);
-    const inputCha = document.getElementById('hello');
-    inputCha.value = '';
-    setContent(response.answer);
-    setBackgroundImage(backgroundImage1);
-    inputElement.readOnly = false;
+    try {
+      const response = await createQ(num, data);
+      const inputCha = document.getElementById('hello');
+      inputCha.value = '';
+      setContent(response.answer);
+      setBackgroundImage(backgroundImage1);
+      inputElement.readOnly = false;
+    } catch (e) {
+      setContent('Anne is broken. Please reload to save anne');
+      setBackgroundImage(backgroundImage3);
+    }
   };
-  console.log(backgroundImage);
   // Image change function
   const change12 = () => {
     setBackgroundImage(backgroundImage2);
@@ -73,6 +78,7 @@ const AnnePage = () => {
               onChange={handleInputChange}
               onKeyDown={(e) => {
                 if (e.key === 'Enter') {
+                  e.preventDefault();
                   apiHandle();
                 }
               }}

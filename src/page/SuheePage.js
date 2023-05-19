@@ -24,12 +24,17 @@ const SuheePage = () => {
     const inputElement = document.getElementById('hello');
     inputElement.readOnly = true;
     setBackgroundImage(backgroundImage3);
-    const response = await createQ(num, data);
-    const inputCha = document.getElementById('hello');
-    inputCha.value = '';
-    setContent(response.answer);
-    setBackgroundImage(backgroundImage1);
-    inputElement.readOnly = false;
+    try {
+      const response = await createQ(num, data);
+      const inputCha = document.getElementById('hello');
+      inputCha.value = '';
+      setContent(response.answer);
+      setBackgroundImage(backgroundImage1);
+      inputElement.readOnly = false;
+    } catch (e) {
+      setContent('수희가 고장났다. 새로고침으로 그녀를 구해주자');
+      setBackgroundImage(backgroundImage3);
+    }
   };
   console.log(backgroundImage);
   // Image change function
@@ -73,6 +78,7 @@ const SuheePage = () => {
               onChange={handleInputChange}
               onKeyDown={(e) => {
                 if (e.key === 'Enter') {
+                  e.preventDefault();
                   apiHandle();
                 }
               }}
