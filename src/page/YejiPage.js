@@ -33,7 +33,7 @@ const YejiPage = () => {
       inputElement.readOnly = false;
     } catch (e) {
       setContent(
-        '예지는 사람이 가본적 없은 영역으로 떠났다. 새로고침으로 그녀를 구해주자',
+        '예지는 사람이 가본적 없는 영역으로 떠났다. 새로고침으로 그녀를 구해주자',
       );
       setBackgroundImage(backgroundImage3);
     }
